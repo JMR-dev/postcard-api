@@ -1,0 +1,11 @@
+:80 {
+    route /api/* {
+        reverse_proxy backend:8080
+    }
+    route /ws {
+        reverse_proxy backend:8080
+    }
+    route /* {
+        reverse_proxy web:3000
+    }
+}
